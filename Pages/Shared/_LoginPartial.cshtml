@@ -1,0 +1,34 @@
+@using Automotive_Sale_Mgmt.Services
+@inject AuthService AuthService
+
+<ul class="navbar-nav ml-auto">
+@if (AuthService.IsSignedIn())
+{
+    var user = AuthService.GetCurrentUser();
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Dashboard" title="Manage">
+            <i class="fa fa-user-circle"></i> Hello, @(user?.FirstName ?? "User")!
+        </a>
+    </li>
+    <li class="nav-item">
+        <form class="form-inline" asp-page="/Logout" method="post">
+            <button type="submit" class="nav-link btn btn-link text-dark">
+                <i class="fa fa-sign-out-alt"></i> Logout
+            </button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Register">
+            <i class="fa fa-user-plus"></i> Register
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Login">
+            <i class="fa fa-sign-in-alt"></i> Login
+        </a>
+    </li>
+}
+</ul>

@@ -1,0 +1,79 @@
+@page
+@model Automotive_Sale_Mgmt.Areas.Identity.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <div class="logo-container">
+                <img src="~/img/car-logo.png" alt="Automotive Sales" class="logo" onerror="this.style.display='none'">
+                <h1>Automotive Sales</h1>
+            </div>
+            <h2>@ViewData["Title"]</h2>
+            <p class="text-muted">Create an account to get started</p>
+        </div>
+
+        <form id="registerForm" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Input.FirstName">First Name</label>
+                        <div class="input-icon">
+                            <i class="fa fa-user"></i>
+                            <input asp-for="Input.FirstName" class="form-control" autocomplete="first-name" aria-required="true" placeholder="John" />
+                        </div>
+                        <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Input.LastName">Last Name</label>
+                        <div class="input-icon">
+                            <i class="fa fa-user"></i>
+                            <input asp-for="Input.LastName" class="form-control" autocomplete="last-name" aria-required="true" placeholder="Doe" />
+                        </div>
+                        <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Email">Email</label>
+                <div class="input-icon">
+                    <i class="fa fa-envelope"></i>
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                </div>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Password">Password</label>
+                <div class="input-icon">
+                    <i class="fa fa-lock"></i>
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="••••••••" />
+                </div>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                <div class="input-icon">
+                    <i class="fa fa-lock"></i>
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="••••••••" />
+                </div>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button id="registerSubmit" type="submit" class="btn btn-primary btn-block">SIGN UP</button>
+            </div>
+        </form>
+
+        <div class="auth-footer">
+            <p>Already have an account? <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Sign in</a></p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

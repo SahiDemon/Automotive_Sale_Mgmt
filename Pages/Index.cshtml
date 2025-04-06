@@ -1,0 +1,150 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Automotive Sale Management System";
+}
+
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #3DA1F9 0%, #134e7e 100%);
+        color: white;
+        padding: 80px 0;
+        border-radius: 10px;
+        margin-bottom: 50px;
+    }
+
+    .feature-card {
+        background-color: white;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 10px 20px rgba(61, 161, 249, 0.1);
+        height: 100%;
+        transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(61, 161, 249, 0.2);
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #3DA1F9;
+    }
+
+    .cta-section {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+
+    .btn-cta {
+        background-color: #3DA1F9;
+        border-color: #3DA1F9;
+        padding: 12px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+
+    .btn-cta:hover {
+        background-color: #2980c9;
+        border-color: #2980c9;
+        transform: scale(1.05);
+    }
+</style>
+
+<div class="container">
+    <section class="hero-section text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h1 class="display-4 fw-bold mb-4">Automotive Sale Management System</h1>
+                <p class="fs-5 mb-5">A complete solution to manage your vehicle inventory, sales, customers, and more.</p>
+                <div>
+                    <a asp-page="/Register" class="btn btn-light btn-lg me-3">
+                        <i class="fas fa-user-plus me-2"></i> Sign Up Now
+                    </a>
+                    <a asp-page="/Login" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-sign-in-alt me-2"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <h2 class="text-center mb-5">Why Choose Our System</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="feature-card text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Vehicle Management</h3>
+                    <p>Easily track your entire vehicle inventory with detailed information and status updates.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Sales Tracking</h3>
+                    <p>Monitor all sales transactions, generate reports, and analyze your business performance.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Customer Database</h3>
+                    <p>Maintain detailed customer information to improve your sales and provide better service.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-4">
+                <div class="feature-card text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Invoice Generation</h3>
+                    <p>Create professional invoices and receipts for your customers with just a few clicks.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Modern Dashboard</h3>
+                    <p>Get real-time insights with our intuitive and responsive dashboard interface.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure Access</h3>
+                    <p>Control who has access to your system with secure authentication and role management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="mb-4">Ready to streamline your automotive business?</h2>
+                <p class="mb-5">Join thousands of automotive dealerships that trust our system for their business management.</p>
+                <a asp-page="/Register" class="btn btn-primary btn-cta">
+                    <i class="fas fa-rocket me-2"></i> Get Started Today
+                </a>
+            </div>
+        </div>
+    </section>
+</div>

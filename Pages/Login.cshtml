@@ -1,0 +1,64 @@
+@page
+@model Automotive_Sale_Mgmt.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <div class="logo-container">
+                <i class="fas fa-car fa-3x" style="color: #3DA1F9;"></i>
+                <h1>AutoSaleMgmt</h1>
+            </div>
+            <h2>Welcome Back</h2>
+            <p>Please enter your credentials to login</p>
+        </div>
+
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            
+            <div class="form-group">
+                <label asp-for="Input.Email">Email</label>
+                <div class="input-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                </div>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <div class="d-flex justify-content-between">
+                    <label asp-for="Input.Password">Password</label>
+                    <a id="forgot-password" class="forgot-link" href="#">Forgot password?</a>
+                </div>
+                <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Password" />
+                </div>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" asp-for="Input.RememberMe" />
+                    <label class="form-check-label" asp-for="Input.RememberMe">Remember me</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button id="login-submit" type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-sign-in-alt me-2"></i> Log in
+                </button>
+            </div>
+
+            <div class="auth-footer">
+                <p>Don't have an account? <a asp-page="./Register">Register</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
